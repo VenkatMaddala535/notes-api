@@ -16,7 +16,7 @@ pipeline
         {
             steps {
                 sh '''
-                    python3 --version
+                    python3 --versionhttp://localhost:8081/job/student-app/4/
                     pip3 --version
                     git --version
                     docker --version
@@ -24,15 +24,15 @@ pipeline
             }
         }
 
-        stage('Build Docker Image')
+
+        stage('Build Docker Image') 
         {
-                steps
-                {
-                    sh '''
-                        docker build -t notes-api:v1.0 .
-                        docker run -d --name notes-api -p 5005:5005 notes-api:v1.0
-                    '''
-                }
+            steps 
+            {
+                sh '''
+                    docker build -t notes-api:${BUILD_NUMBER} -t notes-api:latest .
+                '''
+            }
         }
 
         stage('Finish') 
