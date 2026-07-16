@@ -12,6 +12,18 @@ pipeline
             }
         }
 
+        stage('Verify Tools') 
+        {
+            steps {
+                sh '''
+                    python3 --version
+                    pip3 --version
+                    git --version
+                    docker --version
+                '''
+            }
+        }
+
         stage('Finish') 
         {
             steps 
