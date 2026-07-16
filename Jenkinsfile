@@ -4,28 +4,14 @@ pipeline
 
     stages
     {
-
         stage('Checkout') 
         {
             steps 
             {
                 checkout scm
-
             }
         }
 
-        stage('Verify Tools')
-        {
-            steps 
-            {
-                sh '''
-                echo "TOOL VERSIONS"
-                python --version
-                git --version
-                docker --version
-                '''
-            }
-        }
         stage('Finish') 
         {
             steps 
