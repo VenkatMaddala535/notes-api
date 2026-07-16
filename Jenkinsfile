@@ -28,7 +28,7 @@ pipeline
             {
                 steps {
                     sh '''
-                       source venv/bin/acivate.csh
+                       .venv/bin/acivate.csh
                        python -m pytest -v
                     '''
                 }
