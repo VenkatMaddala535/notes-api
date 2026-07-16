@@ -16,7 +16,7 @@ pipeline
         {
             steps {
                 sh '''
-                    python3 --versionhttp://localhost:8081/job/student-app/4/
+                    python3 --version
                     pip3 --version
                     git --version
                     docker --version
