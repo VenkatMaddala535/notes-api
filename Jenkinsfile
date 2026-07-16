@@ -34,17 +34,17 @@ pipeline
             }
         }
     }
-    Post 
+    post 
     {
-            success 
-            {
-                echo 'Build SUCCESS'
-            }
+        success 
+        {
+            echo 'Build SUCCESS'
+        }
 
-            failure 
-            {
-                echo 'Build FAILED'
-            }
+        failure 
+        {
+            echo 'Build FAILED'
+        }
     }
 
 
