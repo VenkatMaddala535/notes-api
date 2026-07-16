@@ -29,7 +29,7 @@ pipeline
                 steps {
                     sh '''
                     #!/bin/bash
-                    source .venv/bin/activate
+                    source .venv/bin/activate.csh
                     python -m pytest -v
                     '''
                 }
