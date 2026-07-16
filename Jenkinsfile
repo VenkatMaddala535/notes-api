@@ -24,6 +24,16 @@ pipeline
             }
         }
 
+        stage('Verify Test Cases') 
+            {
+                steps {
+                    sh '''
+                       source venv/bin/acivate.csh
+                       python -m pytest -v
+                    '''
+                }
+            }
+
 
         stage('Build Docker Image') 
         {
