@@ -28,8 +28,9 @@ pipeline
             {
                 steps {
                     sh '''
-                       source .venv/bin/activate.csh
-                       python -m pytest -v
+                    #!/bin/bash
+                    source .venv/bin/activate
+                    python -m pytest -v
                     '''
                 }
             }
