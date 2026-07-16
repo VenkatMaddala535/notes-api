@@ -24,6 +24,17 @@ pipeline
             }
         }
 
+        stage('Build Docker Image')
+        {
+                steps
+                {
+                    sh '''
+                        docker build -t notes-api:v1.0 .
+                        docker run -d --name notes-api -p 5005:5005 notes-api:v1.0
+                    '''
+                }
+        }
+
         stage('Finish') 
         {
             steps 
@@ -32,6 +43,7 @@ pipeline
             }
         }
     }
+
     post 
     {
         success 
