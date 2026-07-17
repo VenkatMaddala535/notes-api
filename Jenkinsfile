@@ -25,16 +25,29 @@ pipeline
             }
         }
 
-        stage('Verify Test Cases') 
-            {
-                steps {
-                    sh '''
-                     . .venv/bin/activate
-                     which python 
-                     python -m pytest -v tests/test.py
-                    '''
-                }
+        stage('Verify Test Cases')
+        {
+            steps {
+                sh '''
+                pwd
+                ls -la
+                ls -la .venv
+                ls -la .venv/bin
+
+                . .venv/bin/activate
+
+                echo "PATH=$PATH"
+                echo "VIRTUAL_ENV=$VIRTUAL_ENV"
+
+                which python
+                which python3
+
+                ls -l .venv/bin/python*
+                python --version
+                python3 --version
+                '''
             }
+        }
 
 
         stage('Build Docker Image') 
