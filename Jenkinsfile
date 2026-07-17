@@ -1,7 +1,6 @@
 pipeline
 {
     agent any
-
     stages
     {
         stage('Checkout') 
@@ -16,7 +15,6 @@ pipeline
         {
             steps {
                 sh '''
-                    . .venv/bin/activate
                     python3 --version
                     pip3 --version
                     git --version
