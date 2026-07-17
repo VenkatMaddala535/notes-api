@@ -46,6 +46,7 @@ pipeline
         stage('Run Tests') {
             steps {
                 sh '''
+                    . .venv/bin/activate
                     python3 -m pytest -v tests/test.py
                 '''
             }
