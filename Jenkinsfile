@@ -23,26 +23,12 @@ pipeline
             }
         }
 
-        stage('Verify Test Cases')
-        {
+        stage('Create Virtual Environment') {
             steps {
                 sh '''
-                pwd
-                ls -la
-                ls -la .venv
-                ls -la .venv/bin
-
-                . .venv/bin/activate
-
-                echo "PATH=$PATH"
-                echo "VIRTUAL_ENV=$VIRTUAL_ENV"
-
-                which python
-                which python3
-
-                ls -l .venv/bin/python*
-                python --version
-                python3 --version
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    python --version
                 '''
             }
         }
