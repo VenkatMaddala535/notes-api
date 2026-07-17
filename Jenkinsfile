@@ -33,6 +33,14 @@ pipeline
             }
         }
 
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    python3 -m pytest -v tests/test.py
+                '''
+            }
+        }
+
 
         stage('Build Docker Image') 
         {
