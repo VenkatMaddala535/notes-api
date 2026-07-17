@@ -29,7 +29,7 @@ pipeline
                 steps {
                     sh '''
                      . .venv/bin/activate
-                     python -m pytest -v
+                     python3 -m pytest -v
                     '''
                 }
             }
@@ -66,6 +66,4 @@ pipeline
             echo 'Build FAILED'
         }
     }
-
-
 }
