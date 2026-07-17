@@ -3,6 +3,12 @@ pipeline
     agent any
     stages
     {
+        sh 
+        '''
+        python3 -m venv .venv
+        . .venv/bin/activate
+        '''
+
         stage('Checkout') 
         {
             steps 
@@ -26,8 +32,6 @@ pipeline
         stage('Create Virtual Environment') {
             steps {
                 sh '''
-                    python3 -m venv .venv
-                    . .venv/bin/activate
                     python --version
                 '''
             }
